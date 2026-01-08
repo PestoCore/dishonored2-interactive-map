@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dishonored 2 map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; background: #000; }
+        #map { height: 100vh; width: 100vw; }
+
+        .leaflet-control-layers-expanded {
+            background: #111 ;
+            color: #eee ;
+            border: 2px solid #444 ;
+            border-radius: 8px ;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map', {attributionControl: false}).setView([0.000404314, -5.56205e-05], 20);
+        L.control.attribution({prefix: false}).addTo(map);
+        
+        // change it if there are missing or extra tiles
+        const southWest = L.latLng(-0.00013142824172306136, -0.000667870044708252)
+        const northEast = L.latLng(0.0008609890937456173, 0.0005444884300231935)
+        const bounds = L.latLngBounds(southWest, northEast);
+
+        tile_options = {   
+            minZoom: 19, 
+            maxZoom: 21,
+            bounds:bounds, 
+            tms: false, 
+            attribution: 'PestoCore'
+        }
+
+        var basement1 = L.tileLayer('tiles/B1/{z}/{x}/{y}.png', tile_options)
+        var floor1 = L.tileLayer('tiles/F1/{z}/{x}/{y}.png', tile_options)
+        var floor2 = L.tileLayer('tiles/F2/{z}/{x}/{y}.png', tile_options)
+        var floor3 = L.tileLayer('tiles/F3/{z}/{x}/{y}.png', tile_options)
+        var floor4 = L.tileLayer('tiles/F4/{z}/{x}/{y}.png', tile_options)
+        var floor5 = L.tileLayer('tiles/F5/{z}/{x}/{y}.png', tile_options)
+        var floor6 = L.tileLayer('tiles/F6/{z}/{x}/{y}.png', tile_options)
+        
+        const baseMaps = {
+            "<span style='color: #fff'>Basement 1</span>": basement1,
+            "<span style='color: #fff'>Floor 1</span>": floor1,
+            "<span style='color: #fff'>Floor 2</span>": floor2,
+            "<span style='color: #fff'>Floor 3</span>": floor3,
+            "<span style='color: #fff'>Floor 4</span>": floor4,
+            "<span style='color: #fff'>Floor 5</span>": floor5,
+            "<span style='color: #fff'>Floor 6</span>": floor6
+        };
+
+        L.control.layers(baseMaps, {}, {
+            collapsed: false,
+            position: 'topright'
+        }).addTo(map);
+
+        // added to get points for tileoptions.bounds
+        map.on('click', function(e) {
+            console.log("Clicked on: " + e.latlng.lat + ", " + e.latlng.lng);
+        });
+
+        floor1.addTo(map);
+    </script>
+</body>
+</html>
