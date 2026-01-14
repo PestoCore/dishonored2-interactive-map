@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "rune",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "level": 1, "title": "Rune", "desc": null, "img": "rune_1" }, "geometry": { "type": "Point", "coordinates": [ -31.070570211018591, 47.330304242065537 ] } },
+{ "type": "Feature", "properties": { "id": 2, "level": 6, "title": "Rune", "desc": "Reachable by pressing the emergency button on top of the elevator.", "img": "rune_2" }, "geometry": { "type": "Point", "coordinates": [ -3.338783119776796, 62.047242622005882 ] } },
+{ "type": "Feature", "properties": { "id": 3, "level": -1, "title": "Rune", "desc": null, "img": "rune_3" }, "geometry": { "type": "Point", "coordinates": [ 5.789144984360332, 48.792366670883894 ] } },
+{ "type": "Feature", "properties": { "id": 4, "level": 4, "title": "Rune", "desc": null, "img": "rune_4" }, "geometry": { "type": "Point", "coordinates": [ -41.35352554028502, 25.947615914291603 ] } },
+{ "type": "Feature", "properties": { "id": 5, "level": 4, "title": "Rune", "desc": null, "img": "rune_5" }, "geometry": { "type": "Point", "coordinates": [ -41.293003495127984, 24.979263191779012 ] } },
+{ "type": "Feature", "properties": { "id": 6, "level": 3, "title": "Rune", "desc": null, "img": "rune_6" }, "geometry": { "type": "Point", "coordinates": [ -15.252399455869284, 57.285218347746365 ] } }
+]
+}

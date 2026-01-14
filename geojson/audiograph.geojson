@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "audiograph",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "level": 2, "title": "New Orders", "desc": null, "img": "audiograph_1" }, "geometry": { "type": "Point", "coordinates": [ -31.049212500584566, 34.412437191173765 ] } },
+{ "type": "Feature", "properties": { "id": 2, "level": 2, "title": "Sweet Innocent Hypatia", "desc": null, "img": "audiograph_2" }, "geometry": { "type": "Point", "coordinates": [ -63.081024401302464, 23.922623162668366 ] } }
+]
+}

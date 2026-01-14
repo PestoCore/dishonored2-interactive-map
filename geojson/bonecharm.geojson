@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "bonecharm",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "level": 1, "title": "Bonecharm", "desc": "Found in a boat under the carriage station.", "img": "bonecharm_1" }, "geometry": { "type": "Point", "coordinates": [ -3.086884621624947, -22.43809034879061 ] } },
+{ "type": "Feature", "properties": { "id": 2, "level": 1, "title": "Bonecharm", "desc": "Found in a cabinet.", "img": "bonecharm_2" }, "geometry": { "type": "Point", "coordinates": [ -1.832745862404355, 20.632321390149372 ] } },
+{ "type": "Feature", "properties": { "id": 3, "level": 7, "title": "Black Bonecharm", "desc": "Found on the rooftop in a bird's nest.", "img": "bonecharm_3" }, "geometry": { "type": "Point", "coordinates": [ -1.211116229157817, 59.181490207252708 ] } },
+{ "type": "Feature", "properties": { "id": 4, "level": 3, "title": "Bonecharm", "desc": null, "img": "bonecharm_4" }, "geometry": { "type": "Point", "coordinates": [ -26.424686632395996, 45.178033672930034 ] } },
+{ "type": "Feature", "properties": { "id": 5, "level": 2, "title": "Corrupt Bonecharm", "desc": null, "img": "bonecharm_5" }, "geometry": { "type": "Point", "coordinates": [ -30.173942528177754, 34.047741369337594 ] } }
+]
+}

@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "note",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "level": 2, "title": "Safe Code", "desc": "Contains a safe code to the nearest safe.", "img": "note_1" }, "geometry": { "type": "Point", "coordinates": [ 44.516054269165437, 21.45232663021487 ] } },
+{ "type": "Feature", "properties": { "id": 2, "level": -1, "title": "Vera Moray's Belongings", "desc": null, "img": "note_2" }, "geometry": { "type": "Point", "coordinates": [ 5.804074915679302, 48.269570387526933 ] } },
+{ "type": "Feature", "properties": { "id": 3, "level": 3, "title": "Note to Recuperation Staff", "desc": null, "img": "note_3" }, "geometry": { "type": "Point", "coordinates": [ 4.897532141344776, 52.068314889354419 ] } },
+{ "type": "Feature", "properties": { "id": 4, "level": 3, "title": "Last entry in the matron's diary", "desc": null, "img": "note_4" }, "geometry": { "type": "Point", "coordinates": [ -0.141671977603146, 44.765739428845144 ] } },
+{ "type": "Feature", "properties": { "id": 5, "level": 4, "title": "Orders from Captain Ramirez", "desc": null, "img": "note_5" }, "geometry": { "type": "Point", "coordinates": [ -0.097484595825485, 56.714302145372812 ] } },
+{ "type": "Feature", "properties": { "id": 6, "level": 5, "title": "Hamilton's Diary", "desc": null, "img": "note_6" }, "geometry": { "type": "Point", "coordinates": [ 3.92793823070739, 57.941535225415571 ] } },
+{ "type": "Feature", "properties": { "id": 7, "level": 2, "title": "Crown Killer Rampage Continues", "desc": null, "img": "note_7" }, "geometry": { "type": "Point", "coordinates": [ -29.371611720138176, 33.245410561298016 ] } }
+]
+}

@@ -2,72 +2,79 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dishonored 2 map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; background: #000; }
-        #map { height: 100vh; width: 100vw; }
-
-        .leaflet-control-layers-expanded {
-            background: #111 ;
-            color: #eee ;
-            border: 2px solid #444 ;
-            border-radius: 8px ;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/leaflet-sidebar.css" />
 </head>
 <body>
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#intro" role="tab"><i class="fa fa-home"></i></a></li>
+                <li class="active"><a href="#markers" role="tab"><i class="fa fa-map-marker"></i></a></li>
+            </ul>
 
+            <ul role="tablist">
+                <li><a href="https://github.com/PestoCore/dishonored2-interactive-map" role="tab" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
+            </ul>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="intro">
+                <h1 class="sidebar-header">
+                    Dishonored 2 interactive map
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                <p>Welcome to the interactive map of Dishonored 2. Currently work in progress.</p>
+            </div>
+
+            <div class="sidebar-pane active" id="markers">
+                <h1 class="sidebar-header">
+                    Addermire Institute
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+                <h3 class="sidebar-subheader">Floors</h3>
+                <div id="sidebar-floors" class="floors-container"></div>
+
+                <hr class="sidebar-separator">
+
+                <h3 class="sidebar-subheader">Collectibles</h3>
+                <div class="sidebar-actions">
+                    <button onclick="showAllLayers()">Show All</button>
+                    <button onclick="hideAllLayers()">Hide All</button>
+                </div>
+
+                <div id="sidebar-categories"></div>
+            </div>
+
+            <div class="sidebar-pane" id="settings">
+                <h1 class="sidebar-header">
+                    Settings
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+            </div>
+        </div>
+
+    </div>
     <div id="map"></div>
 
+    <div id="image-overlay" class="image-overlay">
+        <span class="close-overlay">&times;</span>
+        <img id="overlay-img" src="" alt="Full Screen">
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-        var map = L.map('map', {attributionControl: false}).setView([0.000404314, -5.56205e-05], 20);
-        L.control.attribution({prefix: false}).addTo(map);
-        
-        // change it if there are missing or extra tiles
-        const southWest = L.latLng(-0.00013142824172306136, -0.000667870044708252)
-        const northEast = L.latLng(0.0008609890937456173, 0.0005444884300231935)
-        const bounds = L.latLngBounds(southWest, northEast);
-
-        tile_options = {   
-            minZoom: 19, 
-            maxZoom: 21,
-            bounds:bounds, 
-            tms: false, 
-            attribution: 'PestoCore'
-        }
-
-        var basement1 = L.tileLayer('tiles/B1/{z}/{x}/{y}.png', tile_options)
-        var floor1 = L.tileLayer('tiles/F1/{z}/{x}/{y}.png', tile_options)
-        var floor2 = L.tileLayer('tiles/F2/{z}/{x}/{y}.png', tile_options)
-        var floor3 = L.tileLayer('tiles/F3/{z}/{x}/{y}.png', tile_options)
-        var floor4 = L.tileLayer('tiles/F4/{z}/{x}/{y}.png', tile_options)
-        var floor5 = L.tileLayer('tiles/F5/{z}/{x}/{y}.png', tile_options)
-        var floor6 = L.tileLayer('tiles/F6/{z}/{x}/{y}.png', tile_options)
-        
-        const baseMaps = {
-            "<span style='color: #fff'>Basement 1</span>": basement1,
-            "<span style='color: #fff'>Floor 1</span>": floor1,
-            "<span style='color: #fff'>Floor 2</span>": floor2,
-            "<span style='color: #fff'>Floor 3</span>": floor3,
-            "<span style='color: #fff'>Floor 4</span>": floor4,
-            "<span style='color: #fff'>Floor 5</span>": floor5,
-            "<span style='color: #fff'>Floor 6</span>": floor6
-        };
-
-        L.control.layers(baseMaps, {}, {
-            collapsed: false,
-            position: 'topright'
-        }).addTo(map);
-
-        // added to get points for tileoptions.bounds
-        map.on('click', function(e) {
-            console.log("Clicked on: " + e.latlng.lat + ", " + e.latlng.lng);
-        });
-
-        floor1.addTo(map);
-    </script>
+    <script src="js/leaflet-sidebar.js"></script>
+    <script src="js/proj4.js"></script>
+    <script src="js/proj4leaflet.js"></script>
+    <script src="js/leaflet-color-markers.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

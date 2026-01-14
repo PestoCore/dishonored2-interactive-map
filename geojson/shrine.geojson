@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "shrine",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "level": 4, "title": "Outsider Shrine", "desc": null, "img": "shrine_1" }, "geometry": { "type": "Point", "coordinates": [ -40.445694862929471, 25.463439553035307 ] } }
+]
+}

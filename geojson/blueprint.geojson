@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "blueprint",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "level": 2, "title": "Combat Sleep Dart Formula", "desc": "Found inside a safe.", "img": "blueprint_1" }, "geometry": { "type": "Point", "coordinates": [ 53.933672703857923, 33.408607425563595 ] } },
+{ "type": "Feature", "properties": { "id": 2, "level": 3, "title": "Fire Hardening Formula", "desc": null, "img": "blueprint_2" }, "geometry": { "type": "Point", "coordinates": [ 4.940237260996877, 53.007827521700641 ] } },
+{ "type": "Feature", "properties": { "id": 3, "level": 5, "title": "Mercury Vapor Distillation", "desc": null, "img": "blueprint_3" }, "geometry": { "type": "Point", "coordinates": [ -4.550967343588756, 58.274041326368362 ] } }
+]
+}
